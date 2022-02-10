@@ -1,7 +1,7 @@
 '''
 course_search is a Python script using a terminal based menu to help
 students search for courses they might want to take at Brandeis
-testing
+testing123
 '''
 
 from schedule import Schedule
