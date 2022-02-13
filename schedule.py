@@ -49,4 +49,8 @@ class Schedule():
         else:
             print("can't sort by "+str(field)+" yet")
             return self
- 
+
+    def limit(self, limit):
+        ''' limit filters the courses by limit of class (created by Fritz)'''
+        return Schedule(tuple([course for course in self.courses if course['limit'] == limit]))
+

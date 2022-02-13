@@ -3,9 +3,9 @@ course_search is a Python script using a terminal based menu to help
 students search for courses they might want to take at Brandeis
 testing123
 '''
-
-from schedule import Schedule
 import sys
+from schedule import Schedule
+
 
 schedule = Schedule()
 schedule.load_courses()
@@ -16,6 +16,7 @@ quit
 reset
 term  (filter by term)
 course (filter by coursenum, e.g. COSI 103a)
+limit (filter by capacity of a class)
 instructor (filter by instructor)
 subject (filter by subject, e.g. COSI, or LALS)
 title  (filter by phrase in title)
@@ -30,9 +31,9 @@ def topmenu():
     topmenu is the top level loop of the course search app
     '''
     global schedule
-    while True:         
+    while True:
         command = input(">> (h for help) ")
-        if command=='quit':
+        if command == 'quit':
             return
         elif command in ['h','help']:
             print(TOP_LEVEL_MENU)
@@ -48,6 +49,10 @@ def topmenu():
         elif command in ['s','subject']:
             subject = input("enter a subject:")
             schedule = schedule.subject([subject])
+        elif command in ['l','limit']:
+            ''' created by Fritz'''
+            limit = int(input("enter a limit: "))
+            schedule = schedule.limit(limit)
         else:
             print('command',command,'is not supported')
             continue
