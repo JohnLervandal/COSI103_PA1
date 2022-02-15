@@ -57,7 +57,10 @@ def topmenu():
             '''created by Pedro'''
             descripted = input("enter a phrase: ")
             schedule = schedule.description(descripted)
-            '''created by John'''
+        elif command in ['s', 'status']:
+            '''created by Pedro'''
+            status = input("Open or Closed?")
+            schedule = schedule.state(status)
         elif command in ['o', 'online']:
             '''created by John'''
             major = input("Select A Major")

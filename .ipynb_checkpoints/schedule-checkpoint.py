@@ -63,3 +63,7 @@ class Schedule():
         '''search the course list to find phrase in description(created by Pedro)'''
         descripted = [c['name'] for c in self.courses if phrase in c['description']]
         return descripted
+    
+    def state(self, status):
+        status_check = [c['name'] for c in self.courses if status.lower() in c['status_text'].lower()]
+        return status_check

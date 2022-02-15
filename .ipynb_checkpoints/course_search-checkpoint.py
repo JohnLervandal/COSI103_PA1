@@ -57,14 +57,17 @@ def topmenu():
             '''created by Pedro'''
             descripted = input("enter a phrase: ")
             schedule = schedule.description(descripted)
-            '''created by John'''
-            elif command in ['o', 'online']:
+        elif command in ['s', 'status']:
             '''created by Pedro'''
+            status = input("Open or Closed?")
+            schedule = schedule.state(status)
+        elif command in ['o', 'online']:
+            '''created by John'''
             major = input("Select A Major")
-            classes = subject(self,major)
+            classes = schedule.subject(major)
             for x in classes:
                 if x['details'].contains('online'):
-                    print(x['subject'] + x['coursenum'] + " Taught by" + x['instructor'][0] + " " + x['instructor'][1]
+                    print(x['subject'] + x['coursenum'] + " Taught by" + x['instructor'][0] + " " + x['instructor'][1])
         else:
             print('command',command,'is not supported')
             continue
