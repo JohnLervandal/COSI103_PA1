@@ -22,6 +22,7 @@ subject (filter by subject, e.g. COSI, or LALS)
 title  (filter by phrase in title)
 description (filter by phrase in description)
 timeofday (filter by day and time, e.g. meets at 11 on Wed)
+online(see what classes are online depending on subject)
 '''
 
 terms = {c['term'] for c in schedule.courses}
