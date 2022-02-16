@@ -65,10 +65,7 @@ def topmenu():
         elif command in ['o', 'online']:
             '''created by John'''
             major = input("Select A Major: ")
-            schedule = schedule.description(major)
-            for x in classes:
-                if x['details'].contains('online'):
-                    print(x['subject'] + x['coursenum'] + " Taught by" + x['instructor'][0] + " " + x['instructor'][1])
+            schedule = schedule.subject(major).description("online")
         else:
             print('command',command,'is not supported')
             continue
