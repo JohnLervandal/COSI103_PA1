@@ -65,3 +65,7 @@ class Schedule():
     def independent(self, phrase):
         '''search the course list to find phrase in description(created by Pedro)'''
         return Schedule([c for c in self.courses if phrase == c['independent_study']])
+    
+    def state(self, status):
+        status_check = [c['name'] for c in self.courses if status.lower() in c['status_text'].lower()]
+        return status_check

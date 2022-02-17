@@ -22,6 +22,7 @@ subject (filter by subject, e.g. COSI, or LALS)
 title  (filter by phrase in title)
 description (filter by phrase in description)
 timeofday (filter by day and time, e.g. meets at 11 on Wed)
+online(see what classes are online depending on subject)
 '''
 
 terms = {c['term'] for c in schedule.courses}
@@ -69,6 +70,14 @@ def topmenu():
             elif(phrase == 'n'):
                 val = False
             schedule = schedule.independent(val)
+        elif command in ['s', 'status']:
+            '''created by Matthew'''
+            status = input("Open or Closed?")
+            schedule = schedule.state(status)
+        elif command in ['o', 'online']:
+            '''created by John'''
+            major = input("Select A Major: ")
+            schedule = schedule.subject(major).description("online")
         else:
             print('command',command,'is not supported')
             continue
