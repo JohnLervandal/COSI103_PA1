@@ -56,8 +56,7 @@ class Schedule():
 
     def title(self, phrase):
         '''search the course list to find phrase in title(created by Pedro)'''
-        return Schedule([c for c in self.courses if phrase in c['name']])
-        
+        return Schedule([c for c in self.courses if phrase in c['name']])   
     def description(self, phrase):
         '''search the course list to find phrase in description(created by Pedro)'''
         return Schedule([c for c in self.courses if phrase in c['description']])
