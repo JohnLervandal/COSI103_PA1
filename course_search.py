@@ -63,7 +63,7 @@ def topmenu():
             status = input("Open or Closed?")
             schedule = schedule.state(status)
         elif command in ['o', 'online']:
-            '''created by John'''
+            '''created by Johnn'''
             major = input("Select A Major: ")
             schedule = schedule.subject(major).description("online")
         else:
