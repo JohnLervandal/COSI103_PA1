@@ -60,7 +60,6 @@ class Schedule():
     def description(self, phrase):
         '''search the course list to find phrase in description(created by Pedro)'''
         return Schedule([c for c in self.courses if phrase in c['description']])
-    
     def independent(self, phrase):
         '''search the course list to find phrase in description(created by Pedro)'''
         return Schedule([c for c in self.courses if phrase == c['independent_study']])
