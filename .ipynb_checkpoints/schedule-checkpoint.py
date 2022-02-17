@@ -56,10 +56,12 @@ class Schedule():
 
     def title(self, phrase):
         '''search the course list to find phrase in title(created by Pedro)'''
-        titled = [c['name'] for c in self.courses if phrase in c['name']]
-        return titled
+        return Schedule([c for c in self.courses if phrase in c['name']])
     
-    def description(self,phrase):
+    def description(self, phrase):
         '''search the course list to find phrase in description(created by Pedro)'''
-        descripted = [c['name'] for c in self.courses if phrase in c['description']]
-        return descripted
+        return Schedule([c for c in self.courses if phrase in c['description']])
+    
+    def independent(self, phrase):
+        '''search the course list to find phrase in description(created by Pedro)'''
+        return Schedule([c for c in self.courses if phrase == c['independent_study']])

@@ -55,8 +55,20 @@ def topmenu():
             schedule = schedule.limit(limit)
         elif command in ['d', 'description']:
             '''created by Pedro'''
-            descripted = input("enter a phrase: ")
-            schedule = schedule.description(descripted)
+            phrase = input("enter a phrase: ")
+            schedule = schedule.description(phrase)
+        elif command in ['i', 'title']:
+            '''created by Pedro'''
+            phrase = input("enter a phrase: ")
+            schedule = schedule.title(phrase)
+        elif command in ['in', 'independent']:
+            '''created by Pedro'''
+            phrase = input("Are you searching for independent studies? <y/n>")
+            if(phrase == 'y'):
+                val = True
+            elif(phrase == 'n'):
+                val = False
+            schedule = schedule.independent(val)
         else:
             print('command',command,'is not supported')
             continue
