@@ -65,9 +65,9 @@ def topmenu():
         elif command in ['in', 'independent']:
             '''created by Pedro'''
             phrase = input("Are you searching for independent studies? <y/n>")
-            if(phrase == 'y'):
+            if phrase == 'y':
                 val = True
-            elif(phrase == 'n'):
+            elif phrase == 'n':
                 val = False
             schedule = schedule.independent(val)
         elif command in ['s', 'status']:
