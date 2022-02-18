@@ -46,26 +46,26 @@ class Schedule():
     def sort(self,field):
         if field=='subject':
             return Schedule(sorted(self.courses, key= lambda course: course['subject']))
+            
         else:
             print("can't sort by "+str(field)+" yet")
             return self
-
     def limit(self, limit):
         ''' limit filters the courses by limit of class (created by Fritz)'''
         return Schedule(tuple([course for course in self.courses if course['limit'] == limit]))
 
     def title(self, phrase):
         '''search the course list to find phrase in title(created by Pedro)'''
-        return Schedule([c for c in self.courses if phrase in c['name']])
-    
+        return Schedule([c for c in self.courses if phrase in c['name']])   
+        
     def description(self, phrase):
         '''search the course list to find phrase in description(created by Pedro)'''
         return Schedule([c for c in self.courses if phrase in c['description']])
-    
+
     def independent(self, phrase):
         '''search the course list to find phrase in description(created by Pedro)'''
         return Schedule([c for c in self.courses if phrase == c['independent_study']])
     
-    def state(self, status):
-        status_check = [c['name'] for c in self.courses if status.lower() in c['status_text'].lower()]
-        return status_check
+    def state(self, phrase):
+        '''search the course list to find phrase in description(created by Matthew)'''
+        return Schedule([c for c in self.courses if phrase == c['status_text']])
