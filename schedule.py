@@ -67,5 +67,5 @@ class Schedule():
         return Schedule([c for c in self.courses if phrase == c['independent_study']])
     
     def state(self, phrase):
-        '''search the course list to find phrase in description(created by Matthew)'''
+        '''search the course list to find if classes are open or closed (created by Matthew)'''
         return Schedule([c for c in self.courses if phrase == c['status_text']])

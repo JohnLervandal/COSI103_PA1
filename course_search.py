@@ -71,7 +71,7 @@ def topmenu():
             elif phrase == 'n':
                 val = False
             schedule = schedule.independent(val)
-        elif command in ['s', 'status']:
+        elif command in ['st', 'status']:
             '''created by Matthew'''
             status = input("Open or Closed?")
             schedule = schedule.state(status)
