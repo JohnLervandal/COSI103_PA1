@@ -80,6 +80,7 @@ def topmenu():
             major = input("Select A Major: ")
             schedule = schedule.subject(major).description("online")
         elif command in ['e','email']:
+            print("hello")
             input1 = input("Enter email")
             schedule = schedule.email(input1)
         else:
