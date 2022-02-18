@@ -23,6 +23,7 @@ title  (filter by phrase in title)
 description (filter by phrase in description)
 timeofday (filter by day and time, e.g. meets at 11 on Wed)
 online(see what classes are online depending on subject)
+email(filter by email)
 '''
 
 terms = {c['term'] for c in schedule.courses}
@@ -78,6 +79,9 @@ def topmenu():
             '''created by John'''
             major = input("Select A Major: ")
             schedule = schedule.subject(major).description("online")
+        elif command in ['e','email']:
+            input1 = input("Enter email")
+            schedule = schedule.email(input1)
         else:
             print('command',command,'is not supported')
             continue
